@@ -3,7 +3,6 @@ from functions import *
 
 def runSierpinski():
     XArr, YArr = ifsAlgorithm(params.indexSierpinski, params.mSierpinski, params.order, params.probSierpinski)
-    print(XArr, YArr)
     xMin = np.min(XArr)
     yMin = np.min(YArr)
     xMax = np.max(XArr)
