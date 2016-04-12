@@ -3,6 +3,7 @@ from functions import *
 
 def runSierpinski():
     XArr, YArr = ifsAlgorithm(params.indexSierpinski, params.mSierpinski, params.order, params.probSierpinski)
+    print(XArr, YArr)
     xMin = np.min(XArr)
     yMin = np.min(YArr)
     xMax = np.max(XArr)
@@ -37,7 +38,7 @@ def runCcurve():
     gratingx, gratingy = makeGrating(xMin, xMax, yMin, yMax, params.numDivisions)
     plotFractal(XArr, YArr, "Ccurve.png", xMin, xMax, yMin, yMax, gratingx, gratingy)
 
-#runSierpinski()    
-#runFern()
-#runDragon()
+runSierpinski()    
+runFern()
+runDragon()
 runCcurve()

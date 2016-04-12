@@ -5,16 +5,16 @@ def ifsAlgorithm(indeces, m, order, prob):
     mVecRandomIndeces = np.random.choice(indeces, order, p = prob)
     x = 0
     y = 0
-    XArr = np.array([])
-    YArr = np.array([])
-    for index in mVecRandomIndeces:
+    XArr = np.zeros(order)
+    YArr = np.zeros(order)
+    for numIter, index in enumerate(mVecRandomIndeces):
         mCurrent = m[index]
         xCurrent = x
         yCurrent = y
         x = mCurrent[0] * xCurrent + mCurrent[1] * yCurrent + mCurrent[4]
-        XArr = np.append(XArr,x)
+        XArr[numIter] = x
         y = mCurrent[2] * xCurrent + mCurrent[3] * yCurrent + mCurrent[5]
-        YArr = np.append(YArr, y)
+        YArr[numIter] = y
     return XArr, YArr
     
 def makeGrating(xMin, xMax, yMin, yMax, numDivisions): 
